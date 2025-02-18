@@ -62,7 +62,7 @@ globs: ["*.rb", "*.erb", "*.rake", "Gemfile", "Rakefile", "config/**/*.yml", "co
   - Implement background tasks using IHostedService or BackgroundService.
 
   ## Testing
-  - Write unit tests using xUnit, NUnit, or MSTest.
+  - Write unit tests using xUnit.
   - Use Moq or NSubstitute for mocking dependencies.
   - Implement integration tests for API endpoints.
 
