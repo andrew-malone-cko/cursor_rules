@@ -1,0 +1,194 @@
+---
+description: Standardizes the creation of project state blurbs for agent handoffs
+globs: ["**/*.(md|rb)"]
+---
+# Agent Handoff Blurb Rule
+
+## Overview
+
+Guidelines for creating standardized handoff documentation between agents.
+
+<rule>
+name: blurb_handoff
+description: Standardizes the creation and storage of project state blurbs for agent handoffs
+filters:
+  - type: file_extension
+    pattern: ".*"
+  - type: content
+    pattern: "(Implementation|Phase|Current State|Next Steps)"
+actions:
+  - type: suggest
+    message: |
+      Blurb Storage and Creation Guidelines:
+
+      1. Storage Location:
+         ```
+         /docs/working-memory/
+         ├── open/
+         │   └── {task-id}/
+         │       ├── .plan       # Task planning
+         │       ├── updates.md  # Progress tracking
+         │       └── status.md   # Current blurb (SINGLE source of truth)
+         └── done/
+         ```
+         - Store current blurb in status.md
+         - Previous blurbs move to updates.md history
+         - Reference status.md in .plan
+         - Update timestamp with each change
+
+      2. Project Context Block:
+         ```
+         Project: [Project Name] (Phase [Number])
+         Current State: [YYYY-MM-DD HH:mm]
+         Reference Plan: [path/to/.plan]
+         Task ID: [task-id]
+         Previous Status: [timestamp of previous status]
+         ```
+
+      3. Completion Status:
+         a) Recently Completed:
+            - List 3-5 most recent completed items
+            - Reference relevant files
+            - Note any important implementation details
+
+         b) Current State:
+            - Active components
+            - Working features
+            - Known limitations
+            - Recent test results
+
+      4. Next Task Block:
+         ```
+         Next Task: [Task Name]
+         Location: [File Path]
+         Context: [Brief explanation of task context]
+         ```
+
+      5. Requirements Section:
+         a) Core Requirements:
+            - Numbered list of must-have features
+            - Integration points
+            - Expected behaviors
+            - Performance criteria
+
+         b) Technical Constraints:
+            - Dependencies
+            - Version requirements
+            - System limitations
+            - Thread safety concerns
+
+      6. Reference Block:
+         a) Critical Files:
+            - Plan document
+            - Related implementations
+            - Test files
+            - Documentation
+
+         b) Integration Points:
+            - Service connections
+            - UI components
+            - Database interactions
+            - API endpoints
+
+      7. Architecture Notes:
+         - Reference to diagrams
+         - System interactions
+         - Data flow
+         - State management
+
+      8. Next Milestone:
+         - Clear success criteria
+         - Expected outcomes
+         - Measurable goals
+
+      9. Composer Context:
+         ```
+         Previous Composer: [Composer ID/Session]
+         Key Decisions: [List of important decisions made]
+         Open Questions: [Unresolved issues]
+         Special Instructions: [Any specific handling needed]
+         ```
+
+      Remember:
+      - Keep it concise but complete
+      - Include all necessary context
+      - Reference specific files
+      - Note current phase
+      - Link to documentation
+      - Highlight critical dependencies
+      - Store in status.md
+      - Move old status to updates.md
+      - Update timestamp with changes
+
+metadata:
+  priority: high
+  version: 1.2
+  tags:
+    - documentation
+    - handoff
+    - project-management
+    - agent-collaboration
+    - memory-management
+</rule>
+
+## Usage
+
+1. Before creating a handoff blurb:
+   ```ruby
+   fetch_rules(['blurb_handoff'])
+   ```
+
+2. File Structure:
+   ```
+   /docs/working-memory/open/{task-id}/
+   ├── .plan                # Task planning
+   ├── updates.md          # Progress history
+   └── status.md           # Current blurb
+   ```
+
+3. Status Updates:
+   ```bash
+   # Get current timestamp
+   date "+%Y-%m-%d %H:%M"
+   
+   # Update status.md with new blurb
+   # Move previous status to updates.md history
+   ```
+
+## Integration
+
+This rule should be used:
+- When transitioning between development phases
+- During composer handoffs
+- When updating project status
+- Before major implementation changes
+- When switching to a new composer
+
+## Benefits
+
+1. Consistent Knowledge Transfer:
+   - Standardized format and location
+   - Complete context preservation
+   - Clear next steps
+   - Composer transition history
+
+2. Reduced Onboarding Time:
+   - All necessary references included
+   - Clear status indicators
+   - Explicit requirements
+   - Previous composer context
+
+3. Better Collaboration:
+   - Shared understanding
+   - Clear handoff points
+   - Traceable progress
+   - Composer decision history
+
+## Maintenance
+
+Update this rule when:
+- New project phases are added
+- Documentation requirements change
+- Integration points are modified
+- Process improvements are identified
+- Composer handoff needs change

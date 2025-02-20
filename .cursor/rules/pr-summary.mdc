@@ -1,0 +1,191 @@
+---
+description: Guidelines for creating and maintaining PR summary documentation
+globs: 
+---
+ ---
+description: Guidelines for creating and maintaining PR summary documentation
+globs: ["**/docs/working-memory/**/*.md", "**/docs/working-memory/**/pr-summary.md"]
+---
+# PR Summary Rule
+# Guidelines for creating and maintaining pull request summaries
+
+<rule>
+name: pr_summary
+description: Rules for maintaining consistent and informative PR summaries
+filters:
+  - type: file_extension
+    pattern: "\\.md$"
+  - type: content
+    pattern: "(PR Summary|Pull Request|Key Changes)"
+actions:
+  - type: suggest
+    message: |
+      PR Summary Guidelines:
+
+      1. Summary Structure:
+         a) Required Sections:
+            - Overview (1-2 paragraphs)
+            - Key Changes (bulleted list by category)
+            - Testing (coverage and approach)
+            - Migration Impact (if applicable)
+            - Documentation Updates
+            - Related Issues
+            - Testing Instructions
+            - Rollback Plan
+            - Future Considerations
+
+         b) Section Content:
+            - Overview: Brief description of changes and motivation
+            - Key Changes: Categorized list of significant modifications
+            - Testing: Test coverage and validation approach
+            - Migration: Impact on existing systems/users
+            - Documentation: List of updated docs
+            - Related Issues: Links to tickets/issues
+            - Testing Instructions: Step-by-step verification
+            - Rollback: Recovery steps if issues found
+            - Future: Upcoming considerations
+
+      2. Change Documentation:
+         a) Key Changes Format:
+            ```markdown
+            ### 1. Category Name
+            - Major change description
+            - Specific details:
+              - Sub-detail 1
+              - Sub-detail 2
+            ```
+
+         b) Testing Section:
+            ```markdown
+            ## Testing
+            - Unit test coverage
+            - Integration test updates
+            - Manual test scenarios
+            - Performance impact
+            ```
+
+         c) Migration Impact:
+            ```markdown
+            ## Migration Impact
+            1. Breaking changes
+            2. Compatibility notes
+            3. Performance implications
+            4. Security considerations
+            ```
+
+      3. Maintenance Rules:
+         a) Updates:
+            - Keep summary current with changes
+            - Update testing as coverage expands
+            - Add migration notes as discovered
+            - Document new future considerations
+
+         b) Review Process:
+            - Verify accuracy of changes
+            - Confirm testing coverage
+            - Validate migration steps
+            - Check documentation links
+
+      4. Location:
+         - Store in: docs/working-memory/open/{task-id}/pr-summary.md
+         - Update with task progress
+         - Link in PR description
+         - Reference in commit messages
+
+      5. Template:
+         ```markdown
+         # {TICKET-ID}: {Title} - PR Summary
+
+         ## Overview
+         [Brief description of changes and motivation]
+
+         ## Key Changes
+
+         ### 1. Category One
+         - Major change
+         - Details:
+           - Sub-detail
+           - Sub-detail
+
+         ### 2. Category Two
+         - Major change
+         - Details:
+           - Sub-detail
+           - Sub-detail
+
+         ## Testing
+         - Unit tests added/updated
+         - Integration tests
+         - Manual testing
+         - Performance testing
+
+         ## Migration Impact
+         1. [Breaking change description]
+         2. [Compatibility notes]
+         3. [Performance implications]
+         4. [Security considerations]
+
+         ## Documentation Updates
+         - [Doc 1 updated]
+         - [Doc 2 added]
+         - [Doc 3 modified]
+
+         ## Related Issues
+         - Fixes #{issue-number}
+         - Related to #{issue-number}
+         - Depends on #{issue-number}
+
+         ## Testing Instructions
+         1. Step one
+         2. Step two
+         3. Verification steps
+
+         ## Rollback Plan
+         1. Reversion steps
+         2. Data recovery
+         3. User communication
+
+         ## Future Considerations
+         - Future improvement
+         - Technical debt
+         - Upcoming features
+         ```
+
+      Remember:
+      - Keep summaries focused and clear
+      - Update as changes occur
+      - Include all necessary sections
+      - Provide clear testing steps
+      - Document breaking changes
+      - Include rollback procedures
+
+examples:
+  - input: |
+      # PTC-123: Auth Update - PR Summary
+
+      ## Overview
+      Updates authentication flow to use OAuth2.
+
+      ## Key Changes
+      ### 1. Authentication
+      - Added OAuth2 support
+      - Updated user flow
+
+      ## Testing
+      - Added OAuth2 unit tests
+      - Updated integration tests
+
+      [Additional sections...]
+
+  - input: |
+      Commit message:
+      docs(pr): update PTC-123 summary with new test cases
+
+metadata:
+  priority: high
+  version: 1.0
+  tags:
+    - documentation
+    - pull-requests
+    - change-management
+</rule>
