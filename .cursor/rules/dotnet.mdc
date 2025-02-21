@@ -1,9 +1,4 @@
 ---
-description: 
-globs: 
----
-
-  ---
 description: .NET & C# development rules and guidelines for the project. These rules complement the main .cursorrules file with detailed Rails-specific practices.
 globs: ["*.cs"]
 ---
