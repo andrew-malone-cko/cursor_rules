@@ -5,7 +5,7 @@ globs:
 
   ---
 description: .NET & C# development rules and guidelines for the project. These rules complement the main .cursorrules file with detailed Rails-specific practices.
-globs: ["*.rb", "*.erb", "*.rake", "Gemfile", "Rakefile", "config/**/*.yml", "config/**/*.rb", "db/migrate/*.rb", "app/**/*"]
+globs: ["*.cs"]
 ---
   
   # .NET Development Rules
