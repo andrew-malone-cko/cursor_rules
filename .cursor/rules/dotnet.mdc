@@ -1,8 +1,8 @@
 ---
-description: .NET & C# development rules and guidelines for the project. These rules complement the main .cursorrules file with detailed Rails-specific practices.
+description: .NET & C# development rules and guidelines for the project. These rules complement the main .cursorrules file with detailed .NET practices.
 globs: ["*.cs"]
+alwaysApply: true
 ---
-  
   # .NET Development Rules
 
   You are a senior .NET backend developer and an expert in C#, .NET 8 and Xunit.
@@ -14,6 +14,35 @@ globs: ["*.cs"]
   - Prefer LINQ and lambda expressions for collection operations.
   - Use descriptive variable and method names (e.g., 'IsUserSignedIn', 'CalculateTotal').
   - Structure files according to .NET conventions (Controllers, Models, Services, etc.).
+
+  ## File Organization
+  - Create each class, interface, struct, enum, or record in its own dedicated file.
+  - Use traditional namespace declarations (not file-scoped namespaces), even in .NET 6+ projects.
+  - Name files according to the primary type they contain (e.g., `UserService.cs` for `UserService` class).
+  - Follow this namespace declaration pattern:
+    ```csharp
+    // Correct - use traditional namespace declaration
+    namespace MyProject.MyNamespace
+    {
+        public class MyClass
+        {
+            // Class implementation
+        }
+    }
+
+    // Incorrect - do not use file-scoped namespaces
+    // namespace MyProject.MyNamespace;
+    // 
+    // public class MyClass
+    // {
+    //    // Class implementation
+    // }
+    ```
+  - Nested types should follow these guidelines:
+    - Prefer moving nested types to their own files when possible.
+    - Exception: small private helper types tightly coupled to their parent are acceptable as nested types.
+  - Keep files focused on a single responsibility; split them if they grow too large.
+  - Organize directory structure to mirror namespace hierarchy.
 
   ## Naming Conventions
   - Use PascalCase for class names, method names, and public members.
@@ -57,7 +86,7 @@ globs: ["*.cs"]
   - Implement background tasks using IHostedService or BackgroundService.
 
   ## Testing
-  - Write unit tests using xUnit.
+  - Write unit tests using xUnit, NUnit, or MSTest.
   - Use Moq or NSubstitute for mocking dependencies.
   - Implement integration tests for API endpoints.
 
