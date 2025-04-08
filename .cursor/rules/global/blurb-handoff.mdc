@@ -1,6 +1,7 @@
 ---
 description: Standardizes the creation of project state blurbs for agent handoffs
 globs: ["**/*.(md|rb)"]
+alwaysApply: true
 ---
 # Agent Handoff Blurb Rule
 

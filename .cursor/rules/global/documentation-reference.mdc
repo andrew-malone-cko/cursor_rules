@@ -1,6 +1,6 @@
 ---
 description: Ensures that code changes are accompanied by relevant documentation references
-globs: ["**/*.{rb,js,erb,html,css,scss}"]
+globs: ["**/*.{cs,json}"]
 ---
 # Documentation Reference Rule
 # Ensures all code changes are properly documented with references to official documentation

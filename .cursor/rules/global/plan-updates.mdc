@@ -1,6 +1,7 @@
 ---
-description: 
-globs: 
+description: Guidelines for making surgical, focused updates to plan files
+globs: *.md
+alwaysApply: true
 ---
 ---
 description: Guidelines for making surgical, focused updates to plan files

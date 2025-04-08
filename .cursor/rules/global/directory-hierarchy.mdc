@@ -1,0 +1,112 @@
+---
+description: Guidelines for maintaining directory hierarchy documentation
+globs: 
+alwaysApply: true
+---
+ ---
+description: Guidelines for maintaining directory hierarchy documentation
+globs: directory-hierarchy.generated.md
+---
+# Directory Hierarchy Documentation Rule
+
+<rule>
+name: directory_hierarchy
+description: Rules for maintaining accurate and helpful directory hierarchy documentation
+filters:
+  - type: file_extension
+    pattern: "\\.md$"
+  - type: content
+    pattern: "directory-hierarchy\\.generated\\.md"
+actions:
+  - type: suggest
+    message: |
+      Directory Hierarchy Documentation Guidelines:
+
+      1. Structure Requirements:
+         a) File Location:
+            - Must be named `directory-hierarchy.generated.md`
+            - Must be in the root directory
+            - Must be updated when directory structure changes
+
+         b) Content Format:
+            - Use markdown headers for main sections
+            - Use tree-like structure with ASCII characters
+            - Include purpose descriptions for each directory
+            - Maintain consistent indentation
+
+         c) Purpose Documentation:
+            - Every directory must have a purpose description
+            - Purpose should be clear and concise
+            - Focus on LLM agent understanding
+            - Include key functionality
+
+      2. Update Process:
+         a) When to Update:
+            - New directories added
+            - Directory purposes change
+            - Major restructuring
+            - Significant functionality changes
+
+         b) Update Requirements:
+            - Maintain existing format
+            - Preserve purpose descriptions
+            - Update only changed sections
+            - Keep tree structure accurate
+
+         c) Validation:
+            - Verify all directories listed
+            - Check purpose descriptions
+            - Ensure proper indentation
+            - Validate markdown formatting
+
+      3. Documentation Standards:
+         a) Purpose Descriptions:
+            - Start with clear purpose
+            - Include key functionality
+            - Note any special considerations
+            - Reference related components
+
+         b) Tree Structure:
+            - Use consistent ASCII characters
+            - Maintain proper hierarchy
+            - Show parent-child relationships
+            - Keep alignment consistent
+
+         c) Formatting:
+            - Use markdown headers
+            - Maintain consistent spacing
+            - Keep descriptions concise
+            - Use proper markdown syntax
+
+      Remember:
+      - Focus on LLM agent understanding
+      - Keep descriptions clear and concise
+      - Maintain consistent formatting
+      - Update regularly with changes
+      - Verify accuracy of structure
+
+examples:
+  - input: |
+      # Repository Directory Hierarchy
+
+      src/
+      │   Purpose: Contains source code for the application
+      ├─ app/
+      │   │   Purpose: Main application code
+      │   ├─ components/
+      │   │   │   Purpose: Reusable UI components
+      │   ├─ api/
+      │   │   │   Purpose: API endpoints and routes
+
+  - input: |
+      Commit message:
+      docs(hierarchy): update directory structure for new auth module
+
+metadata:
+  priority: high
+  version: 1.0
+  tags:
+    - documentation
+    - directory-structure
+    - llm-guide
+</rule>

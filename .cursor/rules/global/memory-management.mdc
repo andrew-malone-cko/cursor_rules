@@ -1,6 +1,7 @@
 ---
 description: Memory management system rules and standards
 globs: **/docs/working-memory/**/*", "**/docs/templates/**/*", "**/docs/standards/**/*
+alwaysApply: true
 ---
 
 ---

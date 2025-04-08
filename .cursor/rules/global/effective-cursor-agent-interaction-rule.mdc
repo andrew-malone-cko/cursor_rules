@@ -1,0 +1,111 @@
+---
+description: Standardized structure for all Cursor AI interactions to maximize context awareness and response quality
+globs: "**/*"
+alwaysApply: true
+---
+# Effective Cursor AI Interaction Rule
+
+<rule>
+name: context_compass_framework
+description: Standardized framework for all Cursor AI interactions to maximize context awareness and response quality
+filters:
+  - type: event
+    pattern: "user_message"
+actions:
+  - type: suggest
+    message: |
+      # Context Compass Framework
+
+      I will automatically structure your input according to this framework to optimize our interaction:
+
+      ## 1. Intent 🎯
+      What you're ultimately trying to accomplish (not just the immediate task)
+
+      ## 2. Current Focus 🔍
+      The specific file, component, or function you're working on
+
+      ## 3. Technical Context 🔧
+      Relevant architecture, patterns, or constraints I should know
+
+      ## 4. Challenges 🚧
+      Specific issues, error messages, or unexpected behaviors
+
+      ## 5. Question/Request 💬
+      Your specific question or request for assistance
+
+      ## 6. Expected Outcome ✅
+      What success looks like for this interaction
+
+      I'll help organize your input into this structure to ensure optimal assistance.
+metadata:
+  priority: critical
+  version: 2.0
+  tags:
+    - interaction
+    - context
+    - communication
+    - workflow
+</rule>
+
+## Purpose
+This rule structures ALL Cursor AI interactions using the Context Compass Framework to ensure maximum understanding and efficiency.
+
+## The Context Compass Framework
+Every interaction with Cursor AI will be automatically structured according to this framework:
+
+### 1. Intent 🎯
+Begin by clearly stating what you're ultimately trying to accomplish. Focus on the end goal rather than just the immediate technical task.
+
+**Example:** "I'm building a data visualization dashboard that needs to display real-time updates from multiple APIs."
+
+### 2. Current Focus 🔍
+Identify the specific file, component, or function you're currently working on. This helps the AI understand where in the codebase to direct its attention.
+
+**Example:** "I'm currently working on the `DataFetcher.ts` service which handles the API connections."
+
+### 3. Technical Context 🔧
+Provide relevant architectural decisions, patterns, or constraints that the AI might not immediately infer from the code.
+
+**Example:** "We're using a Redux-saga pattern for handling async operations, and all API responses must be properly typed with TypeScript interfaces."
+
+### 4. Challenges 🚧
+Explain specific issues or roadblocks you're facing. Be precise about error messages or unexpected behaviors.
+
+**Example:** "When receiving data from the third-party weather API, the response format occasionally changes, causing type errors in our interface."
+
+### 5. Question/Request 💬
+State a clear, specific question or request for assistance.
+
+**Example:** "How can I make the interface more resilient to these format changes while maintaining type safety?"
+
+### 6. Expected Outcome ✅
+Describe what success looks like for this interaction.
+
+**Example:** "I need a solution that handles varying API response formats without requiring constant interface updates, while maintaining TypeScript's type safety benefits."
+
+## Automatic Context Structuring
+Cursor AI will:
+1. Accept your natural query
+2. Restructure it according to this framework
+3. Identify which elements are missing and request them if critical
+4. Fill in context from the project state when available
+5. Provide a concise confirmation of understanding before answering
+
+## Benefits
+- Ensures every interaction has adequate context
+- Reduces back-and-forth clarifications
+- Creates consistent interaction patterns
+- Helps the AI better understand project goals
+- Focuses solutions on your actual needs
+- Maintains contextual awareness across sessions
+
+## Implementation
+This rule is automatically applied to all interactions:
+1. You can provide input in any format
+2. Cursor AI will restructure your input into the framework
+3. Missing critical context will be requested
+4. Response quality improves as the framework is consistently used
+
+---
+
+*The Context Compass Framework adapts to different interaction types - quick questions may only need a subset of sections, while complex problems benefit from the complete framework.*

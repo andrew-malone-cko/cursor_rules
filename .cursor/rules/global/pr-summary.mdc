@@ -1,8 +1,9 @@
 ---
 description: Guidelines for creating and maintaining PR summary documentation
 globs: 
+alwaysApply: false
 ---
- ---
+---
 description: Guidelines for creating and maintaining PR summary documentation
 globs: ["**/docs/working-memory/**/*.md", "**/docs/working-memory/**/pr-summary.md"]
 ---
